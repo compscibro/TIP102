@@ -1,7 +1,10 @@
 print("Week 1 Session 1\n")
 
+# Author(s): Sandra Yee and Mohammed Abdur Rahman
 
-# Problem 1: Reverse Sentence
+"""
+Problem 1: Reverse Sentence
+"""
 def reverse_sentence(sentence):
     # initialize an empty string
     # left, right pointer for either ends
@@ -19,13 +22,13 @@ def reverse_sentence(sentence):
     return "".join(sentence_list) # O(n)
 
 # print(reverse_sentence('hello'))
-
 # O(n)
-
 # olleh
 
 
-# Problem 2: Goldilocks Number
+"""
+Problem 2: Goldilocks Number
+"""
 # for loop_variable in nums:
 def goldilocks_approved(nums):
 
@@ -43,11 +46,12 @@ def goldilocks_approved(nums):
     return -1
 
 # print(goldilocks_approved([3, 2, 1, 4]))
-
 # O(n)
 # O(1)
 
-# Problem 3: Delete Minimum
+"""
+Problem 3: Delete Minimum
+"""
 def delete_minimum_elements(hunny_jar_sizes):
     # hint: while loop
 
