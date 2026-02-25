@@ -1,7 +1,5 @@
 print("\nWeek 1 Session 1\n")
 
-# https://prod.liveshare.vsengsaas.visualstudio.com/join?D5D1DEADB6A599793326AC10BAE47FB4563F
-
 
 # Problem 1: Reverse Sentence
 def reverse_sentence(sentence):
