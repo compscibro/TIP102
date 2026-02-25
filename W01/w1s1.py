@@ -1,4 +1,4 @@
-print("\nWeek 1 Session 1\n")
+print("Week 1 Session 1\n")
 
 
 # Problem 1: Reverse Sentence
@@ -59,3 +59,4 @@ def delete_minimum_elements(hunny_jar_sizes):
 
     # return the new list
 
+    return -1
