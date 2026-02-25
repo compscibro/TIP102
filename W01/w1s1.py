@@ -1,9 +1,9 @@
 print("Week 1 Session 1\n")
 
-# Author(s): Sandra Yee and Mohammed Abdur Rahman
+# Author(s): Sandra Yee and Mohammed A
 
 """
-Problem 1: Reverse Sentence
+Problem 1: Reverse Sentence - solved by Sandra Yee
 """
 def reverse_sentence(sentence):
     # initialize an empty string
@@ -22,12 +22,18 @@ def reverse_sentence(sentence):
     return "".join(sentence_list) # O(n)
 
 # print(reverse_sentence('hello'))
+
+# sentence = "tubby little cubby all stuffed with fluff"
+# print(reverse_sentence(sentence))
+
+# sentence = "Pooh"
+# print(reverse_sentence(sentence))
 # O(n)
 # olleh
 
 
 """
-Problem 2: Goldilocks Number
+Problem 2: Goldilocks Number - solved by Mohammed A
 """
 # for loop_variable in nums:
 def goldilocks_approved(nums):
@@ -40,7 +46,7 @@ def goldilocks_approved(nums):
     min_num = min(nums) # O(n)
 
     for i in nums: # O(1)
-        if (i != max_num or i != min_num): # early termination condition
+        if (i != max_num and i != min_num): # early termination condition
             return i
 
     return -1
