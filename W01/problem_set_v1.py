@@ -101,14 +101,14 @@ def goldilocks_approved(nums):
     return -1
 
 # tests
-nums = [3, 2, 1, 4]
-print(goldilocks_approved(nums))
+# nums = [3, 2, 1, 4]
+# print(goldilocks_approved(nums))
 
-nums = [1, 2]
-print(goldilocks_approved(nums))
+# nums = [1, 2]
+# print(goldilocks_approved(nums))
 
-nums = [2, 1, 3]
-print(goldilocks_approved(nums))
+# nums = [2, 1, 3]
+# print(goldilocks_approved(nums))
 
 # challenge: What is the smallest possible input size where a second smallest element exists?
 
@@ -146,7 +146,7 @@ def delete_minimum_elements(hunny_jar_sizes):
     # create an empty result list
     result = []
     # use while loop
-    while len(hunny_jar_sizes) != 0:
+    while len(hunny_jar_sizes) > 0:
 
         # record min: O(n)
         min_val = min(hunny_jar_sizes)
@@ -160,11 +160,55 @@ def delete_minimum_elements(hunny_jar_sizes):
     # return the new list
     return result
 
-hunny_jar_sizes = [5, 3, 2, 4, 1]
-print(delete_minimum_elements(hunny_jar_sizes))
+# tests
+# hunny_jar_sizes = [5, 3, 2, 4, 1]
+# print(delete_minimum_elements(hunny_jar_sizes))
 
-hunny_jar_sizes = [5, 2, 1, 8, 2]
-print(delete_minimum_elements(hunny_jar_sizes))
+# hunny_jar_sizes = [5, 2, 1, 8, 2]
+# print(delete_minimum_elements(hunny_jar_sizes))
 
 # challenge: how to optimize it to be O(n log n) instead of O(n^2)? 
 # solution: just use sorted(hunny_jar_sizes)
+
+
+
+
+
+"""
+Problem 4: Sum of Digits
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# IMPLEMENT:
+def nanana_batman(x):
+    result = "" 
+    i = 0
+    while i < x:
+        result += "na"
+        i += 1
+    if (len(result)) > 0:
+        result += " batman!"
+    else:
+        result += " batman!"
+    print(result)
+
+# nanana_batman(7)
+# nanana_batman(1)
