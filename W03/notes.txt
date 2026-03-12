@@ -1,0 +1,20 @@
+Stack Methods
+
+    push is O(1)
+    pop is O(1)
+    peek stack[-1] is O(1)
+
+Queue Methods
+
+    enqueue is O(1)
+    dequeue is O(1)
+    peek is O(1)
+
+popleft() -> pop from left
+pop() -> pop from right
+
+Note, there's no popright. The result should be the same if there's only one element.
+
+Each of them have their own advantages. Stack can only pop() from right. 
+Deque can pop and append from either end. List is flexible with what you want to implement.
+
