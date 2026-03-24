@@ -1,13 +1,4 @@
-# Problem 1: New Horizons
-
-    # Step 1: Copy the following code into your IDE.
-
-    # Step 2: Instantiate an instance of the class Villager, which represents characters in Animal Crossing. 
-    # Store the instance in a variable named apollo.
-
-    # The Villager object created should have the name "Apollo", the species "Eagle", and the catchphrase "pah".
-
-class Villager:
+"""class Villager:
     def __init__(self, name, species, catchphrase):
         self.name = name
         self.species = species
@@ -15,127 +6,118 @@ class Villager:
         self.furniture = []
 
 # Instantiate your villager here
+apollo = Villager("Apollo", "Eagle", "pah")
 
-print(apollo.name) # Apollo
-print(apollo.species) # Eagle
-print(apollo.catchphrase) # pah
-print(apollo.furniture) # []
+# print(apollo.name)  
+# print(apollo.species)  
+# print(apollo.catchphrase) 
+# print(apollo.furniture) 
+"""
 
+# -----
 
+# class Player():
+#     def __init__(self, character, kart):
+#         self.character = character
+#         self.kart = kart
+#         self.items = []
+        
+#     def add_item(self, item_name):
 
+#         special_items = ["banana", "green shell", 
+#         "red shell", "bob-omb", "super star", 
+#         "lightning", "bullet bill"]
 
+#         if item_name in special_items:
+#             self.items.append(item_name)
+        
+        
 
-# Problem 2: Greet Player
+# player_one = Player("Yoshi", "Dolphin Dasher")
 
-    # Step 1: Using the Villager class from Problem 1, add the following greet_player() method to your existing code:
+# print(player_one.items)
 
-    # Step 2: Create a second instance of Villager in a variable named bones.
-    # The Villager object created should have name "Bones", species "Dog", and catchphrase "yip yip".
+# player_one.add_item("red shell")
+# print(player_one.items)
 
-    # Step 3: Call the method greet_player() with your name and print out "Bones: Hey there, <your name>! How's it going, yip yip!". 
-    # For example, if your name is Tram, "Bones: Hey there, Tram! How's it going, yip yip?" would be printed out to the console.
+# player_one.add_item("super star")
+# print(player_one.items)
 
-def greet_player(self, player_name):
-    return f"{self.name}: Hey there, {player_name}! How's it going, {self.catchphrase}!"
-
-
-
-
-
-# Problem 3: Update Catchphrase
-
-    # In Animal Crossing, as players become friends with villagers, the villagers might ask the player to suggest a new catchphrase.
-
-    # Adding on to your existing code, update bones so that his catchphrase is "ruff it up" instead of its current value, "yip yip".
-
-print(bones.greet_player("Samia")) # Bones: Hey there, Samia! How's it going, ruff it up!
-
-
-
-
-
-# Problem 4: Set Character
-
-    # In the previous exercise, we accessed and modified a player’s catchphrase attribute directly. 
-    # Instead of allowing users to update their player directly, it is common to create setter methods 
-    # that users can call to update class attributes. This has a few different benefits, including 
-    # allowing us to validate data before updating our class instance.
-
-    # Update your Villager class with a method set_catchphrase() that takes in one parameter new_catchphrase.
-
-        # If new_catchphrase is valid, it should update the villager's catchphrase attribute to have value new_catchphrase and print "Catchphrase updated".
-
-        # Otherwise, it should print out "Invalid catchphrase".
-
-    # Valid catchphrases are less than 20 characters in length. They must all contain only alphabetic and whitespace characters.
-
-class Villager:
-    def __init__(self, name, species, catchphrase):
-        self.name = name
-        self.species = species
-		self.catchphrase = catchphrase
-        self.furniture = []
-	
-	def set_catchphrase(self, new_catchphrase):
-		pass
-
-alice = Villager("Alice", "Koala", "guvnor")
-
-alice.set_catchphrase("sweet dreams")
-print(alice.catchphrase)
-alice.set_catchphrase("#?!")
-print(alice.catchphrase)
-
-# Example 1:
-# Catchphrase Updated!
-# sweet dreams
-# Invalid catchphrase
-# sweet dreams
+# player_one.add_item("super smash")
+# print(player_one.items)
 
 
+# plan: 
+#   dictionary
+#   loop through players items
+#   if no items, print "inventory empty"
+#   print the name and qty of each item in a player's list
+'''
+class Player():
+    def __init__(self, character, kart):
+        self.character = character
+        self.kart = kart
+        self.items = []
+    
+    def print_inventory(self):
+        if(not self.items):
+            print("Inventory empty")
+        else:
+            Inventory = {}
+            for item in self.items:
+                Inventory[item] = Inventory.get(item, 0) + 1
+            #for key, value in Inventory.items():
+            result = ", ".join(f"{key}: {value}" for key, value in Inventory.items())
+            print("Inventory: " + result) 
 
+player_one = Player("Yoshi", "Super Blooper")
+player_one.items = ["banana", "bob-omb", "banana", "super star"]
+player_two = Player("Peach", "Dolphin Dasher")
 
+player_one.print_inventory()
+player_two.print_inventory()
+'''
 
-# Problem 5: Add Furniture
+#plan
+#loop through race results
+#use place variable to keep track of the players place
+#print players name and place
+'''
+class Player:
+    def __init__(self, character, kart):
+        self.character = character
+        self.kart = kart
+        self.items = []
+    #... methods from previous problems
 
-    # Players and villagers in Animal Crossing can add furniture to their inventory to decorate their house.
-
-    # Update the Villager class with a new method add_item() that takes in one parameter, item_name.
-
-    # The method should validate the item_name.
-
-    #     - If the item is valid, add item_name to the player’s furniture attribute.
-    #     - The method does not need to return any values.
-
-    # item_name is valid if it has one of the following values: "acoustic guitar", "ironwood kitchenette", 
-    # "rattan armchair", "kotatsu", or "cacao tree".
-
-class Villager:
-    # ... methods from previous problems
-	
-    # New method
-    def add_item(self, item_name):
-        pass
-
-alice = Villager("Alice", "Koala", "guvnor")
-print(alice.furniture)
-
-alice.add_item("acoustic guitar")
-print(alice.furniture)
-
-alice.add_item("cacao tree")
-print(alice.furniture)
-
-alice.add_item("nintendo switch")
-print(alice.furniture)
-
-# []
-# ["acoustic guitar"]
-# ["acoustic guitar", "cacao tree"]
-# ["acoustic guitar", "cacao tree"]
+def print_results(race_results):
+    for i,plr in enumerate(race_results):
+        print(str(i+1) + ": " + plr.character)
 
 
 
+peach = Player("Peach", "Daytripper")
+mario = Player("Mario", "Standard Kart M")
+luigi = Player("Luigi", "Super Blooper")
+race_one = [peach, mario, luigi]
 
+print_results(race_one)
+'''
 
-# 
+class Player:
+    def __init__(self, character, kart, opponent=None):
+        self.character = character
+        self.kart = kart
+        self.items = []
+        self.ahead = opponent
+        
+def get_rank(my_player):
+    pass
+
+peach = Player("Peach", "Daytripper")
+mario = Player("Mario", "Standard Kart M", peach)
+luigi = Player("Luigi", "Super Blooper", mario)
+
+print(get_rank(luigi))
+print(get_rank(peach))
+print(get_rank(mario))
