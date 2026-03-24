@@ -1,0 +1,80 @@
+# Node Class
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+# Creating Nodes
+node1 = Node(1)
+node2 = Node(2)
+node3 = Node(3)
+mode4 = Node(4)
+
+# Connecting Nodes
+node1.next = node2
+node2.next = node3
+node3.next = node4
+
+# Print out every nodes in the LinkedList
+current = node1
+while current != None:
+    print(current.value)
+    current = current.next
+
+# Multiple Pass Technique
+'''
+phases:
+    from the end
+    middle of the LinkedList
+    based on the size of the LinkedList
+'''
+def m_pass(head):
+    curr = head
+    # Pass 1: compute global info
+    while curr:
+        # collect info (length, sum, etc.)
+        curr = curr.next
+    curr = head
+    # process using that info
+    while curr:
+        # perform the operation using computed info on first pass
+        curr = curr.next
+
+# Slow-Fast Pointer Technique
+'''
+Use two pointers moving at different speeds and or time to solve problems involving cycles
+or middle elements. 
+Common applications:
+- Detecting a cycle in a LinkedList
+- Finding the middle
+'''
+def slow_fast(head):
+    slow = head
+    fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+    return slow # middle node
+
+# Temporary Head Technique
+'''
+create a temp head node to handle edge cases involving the actual head.
+common applications:
+- deleting the head node
+- inserting at the head node
+- 
+'''
+def temp_node(head):
+    temp = Node(0)
+    temp.next = head
+
+    prev = temp
+    curr = head
+    while curr:
+        if condition(curr):
+            prev.next = curr.next
+        else:
+            prev = curr
+        curr = curr.next
+    return temp.next
+
