@@ -51,7 +51,6 @@ print(test)
 
 
 
-
 """
 Problem 2: Goldilocks Number
 
