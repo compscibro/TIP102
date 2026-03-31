@@ -4,7 +4,13 @@ The assignment statement to the top_hits_2010s variable below creates the linked
 Uptown Funk -> Party Rock Anthem -> Bad Romance. Break apart the assignment statement
 into multiple lines with one call to the Node constructor per line to recreate the list.
 '''
+'''
+U: 
 
+M: 
+
+P: 
+'''
 class SongNode:
 	def __init__(self, song, next=None):
 		self.song = song
@@ -20,8 +26,12 @@ def print_linked_list(node):
 top_hits_2010s = SongNode("Uptown Funk")
 party_rock = SongNode("Party Rock Anthem")
 bad_romance = SongNode("Bad Romance")
-top_hits_2010s.next = party_rock
-party_rock.next = bad_romance
+
+# task: connect the nodes
+
+bad_romance = SongNode("Bad Romance")
+party_rock = SongNode("Party Rock Anthem", bad_romance)
+top_hits_2010s = SongNode("Uptown Funk", party_rock)
 
 print_linked_list(top_hits_2010s) # Uptown Funk -> Party Rock Anthem -> Bad Romance
 
@@ -48,13 +58,23 @@ def print_linked_list(node):
 	print()
 
 def get_artist_frequency(playlist):
-	pass
+	# create an empty dict
+	freq = {}
+	# iterate through the linked list
+	curr = playlist
+	count = 0
+	while curr:
+		freq[curr.artist] = freq.get(curr.artist, 0) + 1
+		curr = curr.next
+
+	return freq
 
 playlist = SongNode("Saturn", "SZA",
 				SongNode("Who", "Jimin",
 						SongNode("Espresso", "Sabrina Carpenter",
 								SongNode("Snooze", "SZA"))))
 
+print_linked_list(playlist)
 print(get_artist_frequency(playlist)) # {"SZA": 2, "Jimin": 1, "Sabrina Carpenter": 1}
 
 '''
@@ -96,7 +116,7 @@ def remove_song(playlist_head, song):
 	current = playlist_head
 	while current.next:
 		if current.next.song == song:
-			current = current.next.next
+			current.next = current.next.next
 			return playlist_head
 		current = current.next
 
